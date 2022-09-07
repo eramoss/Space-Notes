@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&family=Work+Sans:wght@500;600;700;800&display=swap');
+
+
+.body-login{
+    width: 100vw;
+    height: 100vh;
+    background-color: #E5E5E5;
+}
+
+.header-login{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 5vw;
+    padding: 1vw;
+    gap: 1vw
+}
+
+.img-header-login{
+    width: 3vw;
+}
+
+.header-title-login{
+    font-family: 'Work Sans', sans-serif;
+    font-weight:  600;
+    font-size: 1.1vw;
+}
+
+
+.div-main{
+    display: flex;
+    height: 60vh;
+    width: 100vw;
+    justify-content: center;
+}
+
+.main-login{
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    align-items:flex-start;
+    justify-content:center;
+}
+
+.title-main-login{
+    font-family: 'Work Sans', sans-serif;
+    font-weight:  600;
+    font-size: 2vw;
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+    gap: 3vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-main-login{
+    margin-top: 1vw;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1vw;
+    padding: 0.6em;
+    width: 100%;
+    background: #F7F7F7;
+    border: 0.15em solid #D6D6D6;
+    border-radius: 1vw;
+}
+.button-main-login:hover{
+    background-color: #7f6bff9f ;
+    cursor: pointer;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 0.15vw solid #D6D6D6;
+    padding-top: 1vw;
+    align-items: center;
+}
+
+.input-form-login{
+    margin: 0.5em;
+    padding: 0.5em;
+    padding: 0.6em;
+    width: 100%;
+    background: #F7F7F7;
+    border: 0.1vw solid #D6D6D6;
+    border-radius: 0.5em;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1vw;
+}
+
+.pass{
+    margin-bottom: 0;
+    width: 90%;
+    margin-right: 5vw;
+}
+
+.footer-input{
+    margin-top: 0;
+    width: 100%;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1vw;
+}
+
+.forgot-pass{
+    text-decoration: none;
+    color:#242424;
+    opacity: 0.5;
+}
+
+.button-login{
+    background-color: #7F6BFF;
+    margin-top: 1vw;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1vw;
+    padding: 0.7vw;
+    width: 10vw;
+    color: #F7F7F7;
+    border-radius: 0.5em;
+}
+.button-login:hover{
+    background-color: #6b59e6;
+    cursor: pointer;
+}
+
+.button-sign-up{
+    background-color: #F7F7F7;
+    margin-top: 1vw;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1vw;
+    padding: 0.7vw;
+    width: 10vw;
+    color: #242424;
+    border-radius: 0.5em;
+}
+
+.button-sign-up:hover{
+    background-color: #e4e0e0;
+    cursor: pointer;
+}
+
+.hidden-pass{
+    position: absolute;
+    background-color: #E5E5E5;
+    margin: 5vw;
+    margin-left: 46vw;
+    width: 2vw;
+    font-size: 1.5vw;
+}
+
+.hidden-pass:hover{
+    cursor: pointer;
+}
