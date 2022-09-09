@@ -1,6 +1,6 @@
 # About Space Notes
 
- <img src="https://i.pinimg.com/564x/b9/1e/9a/b91e9a903fdefb205d121abbd4b7411e.jpg" />
+ <img src="https://i.pinimg.com/564x/b9/1e/9a/b91e9a903fdefb205d121abbd4b7411e.jpg" style='width: 100%;' />
 
 
 
