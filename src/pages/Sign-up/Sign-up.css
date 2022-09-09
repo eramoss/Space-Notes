@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&family=Work+Sans:wght@500;600;700;800&display=swap");
 
-.body-login {
+.body-sign-up {
   width: 100vw;
   height: 100vh;
   background-color: #e5e5e5;
 }
 
-.header-login {
+.header-sign-up {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -15,11 +15,11 @@
   gap: 1vw;
 }
 
-.img-header-login {
+.img-header-sign-up {
   width: 3vw;
 }
 
-.header-title-login {
+.header-title-sign-up {
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
   font-size: 1.1vw;
@@ -32,7 +32,7 @@
   justify-content: center;
 }
 
-.main-login {
+.main-sign-up {
   width: 45vw;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
   justify-content: center;
 }
 
-.title-main-login {
+.title-main-sign-up {
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
   font-size: 2vw;
@@ -55,7 +55,7 @@
   justify-content: center;
 }
 
-.button-main-login {
+.button-main-sign-up {
   margin-top: 1vw;
   font-family: "Kanit", sans-serif;
   font-size: 1vw;
@@ -67,18 +67,20 @@
   border-radius: 1vw;
   box-shadow: 1vw 1vw #242424;
 }
-.button-main-login:hover {
+.button-main-sign-up:hover {
   background: linear-gradient(180deg, #7e6affad 0%, #5b4bc5a6 100%);
   box-shadow: 1vw 1vw #242424;
   border: 0.15em solid #3b3b3b;
   cursor: pointer;
 }
-.button-main-login:active{
+.button-main-sign-up:active{
   box-shadow: 1vw 1vw #3a3a3a;
   padding: 0.4vw;
 }
 
-.form-login {
+
+
+.form-sign-up {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -87,7 +89,7 @@
   align-items: center;
 }
 
-.input-form-login {
+.input-form-sign-up {
   margin: 0.5em;
   padding: 0.5em;
   padding: 0.6em;
@@ -118,36 +120,29 @@
   opacity: 0.5;
 }
 
-.button-login {
+.button-sign-up-page {
   background-color: #7f6bff;
   margin-top: 1vw;
   font-family: "Kanit", sans-serif;
   font-size: 1vw;
   padding: 0.7vw;
-  width: 10vw;
+  width: 20vw;
   color: #f7f7f7;
   border-radius: 0.5em;
 }
-.button-login:hover {
+.button-sign-up-page:hover {
   background-color: #6b59e6;
   cursor: pointer;
 }
-
-.button-sign-up {
-  background-color: #f7f7f7;
-  margin-top: 1vw;
-  font-family: "Kanit", sans-serif;
-  font-size: 1vw;
-  padding: 0.7vw;
-  width: 10vw;
-  color: #242424;
-  border-radius: 0.5em;
+.button-sign-up-page:disabled{
+  background-color: #d6d6d6;
+  cursor: auto;
+}
+.button-sign-up-page:disabled:hover{
+  background-color: #d6d6d6;
+  cursor: auto;
 }
 
-.button-sign-up:hover {
-  background-color: #e4e0e0;
-  cursor: pointer;
-}
 
 .hidden-pass {
   position: absolute;

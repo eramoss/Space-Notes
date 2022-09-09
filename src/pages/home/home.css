@@ -1,120 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&family=Work+Sans:wght@500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&family=Work+Sans:wght@500;600;700;800&display=swap");
 
-
-.home{
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(180deg, #7F6AFF 0%, #5C4BC5 100%);
+.home {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #7f6aff 0%, #5c4bc5 100%);
 }
 
-.header-home{
-    width: 100vw;
-    display: flex ;
-    flex-direction: row;
-    justify-content: space-between;
+.header-home {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.newsletter-home{
-    padding: 1vw;
-    font-family: 'Kanit', sans-serif;
-    font-style: normal;
-    font-size: 1vw;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    color: rgba(255, 247, 247, 0.527)
+.newsletter-home {
+  padding: 1vw;
+  font-family: "Kanit", sans-serif;
+  font-style: normal;
+  font-size: 1vw;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: rgba(255, 247, 247, 0.527);
 }
 
-.changelog-home{
-    padding: 1vw;
-    padding-right: 2vw;
-    font-family: 'Kanit', sans-serif;
-    font-style: normal;
-    font-size: 1vw;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    color: #F5F3FF
+.changelog-home {
+  padding: 1vw;
+  padding-right: 2vw;
+  font-family: "Kanit", sans-serif;
+  font-style: normal;
+  font-size: 1vw;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: #f5f3ff;
 }
 
-
-.main-home{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 9vw ;
+.main-home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 9vw;
 }
 
-
-.title-home{
-    font-size: 7vw;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
-    color: #F5F3FF;
+.title-home {
+  font-size: 7vw;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  color: #f5f3ff;
 }
 
-.img-home{
-    position: absolute;
-    padding: 3.5vw;
-    width: 13vw;
+.img-home {
+  position: absolute;
+  padding: 3.5vw;
+  width: 13vw;
 }
-.p-home{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.3vw;
-    padding-top: 9vw;
-    text-align: center;
-    letter-spacing: 0.05em;
-    color: #F5F3FF;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
-    width: 20vw;
-    font-size: 1vw;
-}
-
-.underline{
-    text-decoration: underline;
+.p-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3vw;
+  padding-top: 9vw;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #f5f3ff;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  width: 20vw;
+  font-size: 1vw;
 }
 
-.strong{
-    font-weight: 800;
+.underline {
+  text-decoration: underline;
 }
 
-
-.button-home{
-    background-color: rgba(255, 255, 255, 0);
-    width: 10vw;
-    border: 0.05em solid #F5F3FF;
-    margin-top: 2vw;
-    padding: 0.5vw;
-    color: #F5F3FF;
-    font-family: 'Kanit', sans-serif;
-    font-style: normal;
-    font-size: 1vw;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    border-radius: 0.5vw;
-    box-shadow: 1vw 1vw rgba(0, 0, 0, 0.411);
-}
-.button-home:hover{
-    background-color: #7F6AFF;
-    cursor: pointer;
+.strong {
+  font-weight: 800;
 }
 
-.button-home:active{
-    width: 9.7vw;
-    box-shadow: 1vw 1vw rgba(0, 0, 0, 0.541);
+.button-home {
+  background-color: rgba(255, 255, 255, 0);
+  width: 10vw;
+  border: 0.05em solid #f5f3ff;
+  margin-top: 2vw;
+  padding: 0.5vw;
+  color: #f5f3ff;
+  font-family: "Kanit", sans-serif;
+  font-style: normal;
+  font-size: 1vw;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 0.5vw;
+  box-shadow: 1vw 1vw rgba(0, 0, 0, 0.411);
+}
+.button-home:hover {
+  background-color: #7f6aff;
+  cursor: pointer;
 }
 
-
-.footer-home{
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    bottom:0px;
-    
+.button-home:active {
+  width: 9.7vw;
+  box-shadow: 1vw 1vw rgba(0, 0, 0, 0.541);
 }
 
-.footer-img-home{
-    width: 60vw;
+.footer-home {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  bottom: 0px;
+}
+
+.footer-img-home {
+  width: 60vw;
 }
