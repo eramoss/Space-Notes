@@ -1,36 +1,48 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Fragment } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useContext } from "react";
+
 import Home from "./pages/home/Home";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Sign-up/Sign-up";
 import Main from "./pages/main/main";
-import { AuthProvider } from "./contexts/auth";
 
-
-
-
-const Private = ({Item}) => {
-  const signed = false;
-  return signed > 0 ? <Item /> : <Home />;
-}
-
+import { AuthProvider, AuthContext } from "./contexts/auth";
 
 function App() {
+  const Private = ({ children }) => {
+    const { authenticated, loading } = useContext(AuthContext);
+
+    if (loading) {
+      return <div className="loading" > carregando...</div>
+    }
+
+    if (!authenticated) {
+      return <Navigate to="/Login" />;
+    }
+
+    return children;
+  };
 
   return (
-    <AuthProvider>
-      <BrowserRouter>
-          <Fragment>
-              <Routes>
-                <Route path="/myNotes" element={<Private Item={Main} />} />
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/sign-up" element={<SignUp />} />
-                <Route path="+" element={<Home />}/>
-              </Routes>
-            </Fragment>
-      </BrowserRouter>
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route
+            exact
+            path="/myNotes"
+            element={
+              <Private>
+                <Main />
+              </Private>
+            }
+          />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

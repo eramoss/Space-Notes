@@ -1,13 +1,21 @@
-import useAuth from "../../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
-import { token } from "../../contexts/auth";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/auth";
+import UserBar from "../../components/UserBar";
+
+
 
 function Main() {
-  const { signout } = useAuth();
-  const navigate = useNavigate();
 
-  return <div>
-    <button onClick={console.log(token)}> aaaaaaaaaaaaaaaaaaaaaaaaaa </button>
+  const {logout} = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logout()
+  }
+
+   return <div>
+    <UserBar></UserBar>
+
+   
   </div>;
 }
 

@@ -1,68 +1,56 @@
-import {createContext, useEffect, useState } from "react";
+import {createContext, useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
 
-export const AuthContext = createContext({});
-export const token = localStorage.getItem('user_token')
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState();
 
-  useEffect(() => {
-    const userToken = localStorage.getItem("user_token");
-    const usersStorage = localStorage.getItem("users_db");
 
-    if (userToken && usersStorage) {
-      const hasUser = JSON.parse(usersStorage)?.filter(
-        (user) => user.email === JSON.parse(userToken).email
-      );
-      if (hasUser) setUser(hasUser[0]);
+export const AuthContext = createContext();
+
+export const AuthProvider = ({children}) =>{
+    const Navigate = useNavigate()
+    const [user, setUser] = useState(null)
+    const [loading,setLoading] = useState(true)
+
+    useEffect(() => {
+        const recoveredUser = localStorage.getItem('user')
+
+        if(recoveredUser){
+            setUser(JSON.parse(recoveredUser))
+        }
+
+        setLoading(false)
+    },[])
+
+
+    const login = (email,password) => {
+
+        const loggedUser = {
+            id: '123',
+            email,
+        }
+
+        localStorage.setItem('user', JSON.stringify(loggedUser))
+
+
+        if (password === 'secret') {
+            console.log('login', {email, password})
+            setUser({ id: '123',email})
+            Navigate('/myNotes')
+        }
+      
     }
-  }, []);
-
-  const signin = (email, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_db"));
-
-    const hasUser = usersStorage?.filter((user) => user.email === email);
-
-    if (hasUser) {
-      if (hasUser[0].email === email && hasUser[0].password === password) {
-        const token = Math.random().toString(36).substring(2);
-        localStorage.setItem("user_token", JSON.stringify({ email, token }));
-          
-        setUser({ email, password });
-        return;
-      } else {
-        return "E-mail ou senha incorretos";
-      }
-    }else{
-      return "E-mail ou senha incorretos"
-    }
-
-  };
-
-  const signup = (email, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_db"));
-    const hasUser = usersStorage?.filter((user) => user.email === email);
-
-    if (hasUser?.lenght) {
-      return "já tem uma conta com esse E-mail";
-    }
-    let newUser;
-
-    if (usersStorage) {
-      newUser = [...usersStorage, { email, password }];
-    } else {
-      newUser = [{ email, password }];
+  
+    const logout = () => {
+      console.log('logout')
+      setUser(null)
+      localStorage.removeItem('user')
+      Navigate('/')
     }
 
-    localStorage.setItem("users_db", JSON.stringify(newUser));
-    return;
-  };
-
-  const signout = () => {
-    setUser(null)
-    localStorage.removeItem("user_token")
-  }
-  return (
-  <AuthContext.Provider value={{ user , signed: !!user, signin,signup,signout}}>
-    {children}
-  </AuthContext.Provider>);
-};
+    return(
+        <AuthContext.Provider value={{
+            authenticated: !!user, user,loading, login, logout
+          }}>
+            {children}
+        </AuthContext.Provider>
+    )
+}

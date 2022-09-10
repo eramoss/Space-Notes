@@ -1,42 +1,32 @@
 import "./Login.css";
 import { useState } from "react";
-import useAuth from "../../hooks/useAuth";
-
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/auth";
 
 function Login() {
-  const {signin} = useAuth()
-  
+  //
+  const {authenticated,login} = useContext(AuthContext)
+
   // usando State para atualizar as variaveis do campo de input
 
-  // eslint-disable-next-line 
-  const [pass,setPass] = useState("")
-  // eslint-disable-next-line 
-  const [email,setEmail] = useState("")
-  // eslint-disable-next-line 
-  const [error,setError] = useState("")
-
+  // eslint-disable-next-line
+  const [pass, setPass] = useState("");
+  // eslint-disable-next-line
+  const [email, setEmail] = useState("");
+  // eslint-disable-next-line
+  const [error, setError] = useState("");
 
   //sistema de verificação de email e senha
 
-  const handleSubmit= (e) =>{
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (!email | !pass) {
-      setError("preencha todos os campos")
+      setError("preencha todos os campos");
       return;
     }
-
-    const res = signin(email,pass)
-
-    if (res) {
-      setError(res)
-      return;
-    }
-
-    window.location.href = "/myNotes"
-  
+    login(email,pass)
   };
 
-  
   // usando State para atualizar as variaveis do campo de input
   const [icon, setIcon] = useState("ai-eye-slashed");
   const [type_pass, setType_pass] = useState("password");
@@ -52,19 +42,17 @@ function Login() {
       setIcon("ai-eye-slashed");
       setType_pass("password");
     }
-    }
+  };
 
   //função que leva pra pagina de sign up
-  const changeWindowRepository= (e) => {
-    e.preventDefault()
-    window.location.href = 'https://github.com/eramoss/Space-notes';
-  }
-  const changeWindowSignup= (e) => {
-    e.preventDefault()
-    window.location.href = '/Sign-up';
-  }
-
-
+  const changeWindowRepository = (e) => {
+    e.preventDefault();
+    window.location.href = "https://github.com/eramoss/Space-notes";
+  };
+  const changeWindowSignup = (e) => {
+    e.preventDefault();
+    window.location.href = "/Sign-up";
+  };
 
   // div que retorna pro APP
 
@@ -84,10 +72,11 @@ function Login() {
         <main className="main-login">
           <h1 className="title-main-login">Sign-in</h1>
           <div className="buttons">
-            <button className="button-main-login">
-              ACCESS WITHOUT LOGIN
-            </button>
-            <button onClick={changeWindowRepository} className="button-main-login">
+            <button className="button-main-login">ACCESS WITHOUT LOGIN</button>
+            <button
+              onClick={changeWindowRepository}
+              className="button-main-login"
+            >
               <i href="#" className="fa fa-github"></i> REPOSITORY
             </button>
           </div>
@@ -98,7 +87,7 @@ function Login() {
               className="input-form-login user"
               id="user"
               value={email}
-              onChange= {(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="E-MAIL"
             />
             <input
@@ -122,7 +111,11 @@ function Login() {
               <button className="button-login " type="submit" id="login">
                 LOGIN
               </button>
-              <button onClick={changeWindowSignup}  className="button-sign-up" id="sign-up">
+              <button
+                onClick={changeWindowSignup}
+                className="button-sign-up"
+                id="sign-up"
+              >
                 SIGN UP
               </button>
             </div>
