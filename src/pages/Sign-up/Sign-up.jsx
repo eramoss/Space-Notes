@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Sign-up.css";
-import { SHEET_API_KEY } from "../../../apisecret";
+import { SHEET_API_KEY } from "apisecret";
 
 function SignUp() {
   const KEY = SHEET_API_KEY
