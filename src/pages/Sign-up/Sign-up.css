@@ -56,25 +56,25 @@
 }
 
 .button-main-sign-up {
-  margin-top: 1vw;
+  margin-top: 0.3vw;
   font-family: "Kanit", sans-serif;
   font-size: 1vw;
   padding: 0.6em;
-  width: 50vw;
+  width: 50%;
   max-width: 240px;
   background: #f7f7f7;
   border: 0.15em solid #d6d6d6;
   border-radius: 1vw;
-  box-shadow: 1vw 1vw #242424;
+  
 }
 .button-main-sign-up:hover {
   background: linear-gradient(180deg, #7e6affad 0%, #5b4bc5a6 100%);
-  box-shadow: 1vw 1vw #242424;
+  
   border: 0.15em solid #3b3b3b;
   cursor: pointer;
 }
 .button-main-sign-up:active{
-  box-shadow: 1vw 1vw #3a3a3a;
+  
   padding: 0.4vw;
 }
 

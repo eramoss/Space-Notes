@@ -3,33 +3,32 @@ import "./Sign-up.css";
 
 
 function SignUp() {
-  const KEY = 46121354776
+  
   const [confirm_pass, setConfirm_pass] = useState("");
   const [error, setError] = useState("");
-  const [pass, setPass] = useState("");
+  const [password, setPass] = useState("");
   const [email, setEmail] = useState("");
 
   //sistema de verificação de email e senha
 
   const handleSubmit_sign = (e) => {
     e.preventDefault();
-    if (!email | !pass | !confirm_pass) {
+    console.log(JSON.stringify({email, password}))
+    if (!email | !password | !confirm_pass) {
       setError("preencha todos os campos");
-    } else if (pass !== confirm_pass) {
+    } else if (password !== confirm_pass) {
       setError("As senhas não são iguais");
       return;
     }
 
-    console.log(KEY)
 
-    fetch(`https://api.sheetmonkey.io/form/${KEY}`, {
+    fetch('http://localhost:3000/users', {
 
       method: 'post',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({email, pass}),
+      body: JSON.stringify({email, password}),
     });
 
     alert("Usuário cadastrado com sucesso!");
@@ -91,7 +90,7 @@ function SignUp() {
               type={type_pass}
               className="input-form-sign-up pass"
               id="pass"
-              value={pass}
+              value={password}
               onChange={(e) => setPass(e.target.value)}
               placeholder="PASSWORD"
             />

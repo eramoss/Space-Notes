@@ -6,7 +6,7 @@ const userMiddleWare = require('./middlewares/usersMiddleWare')
 router.get('/users', userController.getAll)
 router.post('/users', userMiddleWare.validateBody , userController.addUser)
 router.delete('/users/:id', userController.deleteUser)
-router.put('/users/:id', userController.updateUser)
+router.put('/users/:id',userMiddleWare.validateBody, userController.updateUser)
 
 
 module.exports = router
