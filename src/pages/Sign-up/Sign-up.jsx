@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./Sign-up.css";
-import { SHEET_API_KEY } from "apisecret";
+
 
 function SignUp() {
-  const KEY = SHEET_API_KEY
+  const KEY = 46121354776
   const [confirm_pass, setConfirm_pass] = useState("");
   const [error, setError] = useState("");
   const [pass, setPass] = useState("");
@@ -33,7 +33,6 @@ function SignUp() {
     });
 
     alert("Usuário cadastrado com sucesso!");
-    
   };
 
   // usando State para atualizar as variaveis do campo de input
