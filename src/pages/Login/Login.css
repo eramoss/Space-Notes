@@ -99,7 +99,7 @@
   font-size: 1vw;
 }
 
-.pass {
+.password {
   margin-bottom: 0;
   width: 90%;
   margin-right: 5vw;
@@ -112,7 +112,7 @@
   font-size: 1vw;
 }
 
-.forgot-pass {
+.forgot-password {
   text-decoration: none;
   color: #242424;
   opacity: 0.5;
@@ -149,7 +149,7 @@
   cursor: pointer;
 }
 
-.hidden-pass {
+.hidden-password {
   position: absolute;
   background-color: #e5e5e5;
   margin: 5vw;
@@ -158,6 +158,6 @@
   font-size: 1.5vw;
 }
 
-.hidden-pass:hover {
+.hidden-password:hover {
   cursor: pointer;
 }

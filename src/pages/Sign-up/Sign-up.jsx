@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "./Sign-up.css";
+import {AuthContext} from "../../contexts/auth";
+import { useContext } from "react";
 
 
 function SignUp() {
-  
+  const {sign} = useContext(AuthContext)
+
   const [confirm_pass, setConfirm_pass] = useState("");
   const [error, setError] = useState("");
   const [password, setPass] = useState("");
@@ -13,26 +16,16 @@ function SignUp() {
 
   const handleSubmit_sign = (e) => {
     e.preventDefault();
-    console.log(JSON.stringify({email, password}))
+
     if (!email | !password | !confirm_pass) {
       setError("preencha todos os campos");
     } else if (password !== confirm_pass) {
       setError("As senhas não são iguais");
       return;
     }
+    sign(email,password)
 
-
-    fetch('http://localhost:3000/users', {
-
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({email, password}),
-    });
-
-    alert("Usuário cadastrado com sucesso!");
-  };
+    };
 
   // usando State para atualizar as variaveis do campo de input
   const [icon, setIcon] = useState("ai-eye-slashed");
@@ -49,6 +42,7 @@ function SignUp() {
       setIcon("ai-eye-slashed");
       setType_pass("password");
     }
+
   };
   const toLogin = () => {
     window.location.href = "Login";

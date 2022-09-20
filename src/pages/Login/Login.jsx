@@ -5,12 +5,12 @@ import { AuthContext } from "../../contexts/auth";
 
 function Login() {
   //
-  const {authenticated,login} = useContext(AuthContext)
+  const {Login} = useContext(AuthContext)
 
   // usando State para atualizar as variaveis do campo de input
 
   // eslint-disable-next-line
-  const [pass, setPass] = useState("");
+  const [password, setpassword] = useState("");
   // eslint-disable-next-line
   const [email, setEmail] = useState("");
   // eslint-disable-next-line
@@ -20,27 +20,27 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email | !pass) {
+    if (!email | !password) {
       setError("preencha todos os campos");
       return;
     }
-    login(email,pass)
+    Login(email,password)
   };
 
   // usando State para atualizar as variaveis do campo de input
   const [icon, setIcon] = useState("ai-eye-slashed");
-  const [type_pass, setType_pass] = useState("password");
+  const [type_password, setType_password] = useState("password");
 
   //função para desabilitar e habilitar o hidden da senha
-  const hidden_pass = (e) => {
+  const hidden_password = (e) => {
     e.preventDefault();
 
     if (icon === "ai-eye-slashed") {
       setIcon("ai-eye-open");
-      setType_pass("text");
+      setType_password("text");
     } else {
       setIcon("ai-eye-slashed");
-      setType_pass("password");
+      setType_password("password");
     }
   };
 
@@ -91,19 +91,19 @@ function Login() {
               placeholder="E-MAIL"
             />
             <input
-              type={type_pass}
-              className="input-form-login pass"
-              id="pass"
-              value={pass}
-              onChange={(e) => setPass(e.target.value)}
+              type={type_password}
+              className="input-form-login password"
+              id="password"
+              value={password}
+              onChange={(e) => setpassword(e.target.value)}
               placeholder="PASSWORD"
             />
-            <button onClick={hidden_pass} className="hidden-pass">
-              <i id="hidde-pass" className={icon}></i>
+            <button onClick={hidden_password} className="hidden-password">
+              <i id="hidde-password" className={icon}></i>
             </button>
             <div className="footer-input">
               <div>{error}</div>
-              <a href="forgot.com" className="forgot-pass">
+              <a href="forgot.com" className="forgot-password">
                 FORGOT PASSWORD?
               </a>
             </div>
