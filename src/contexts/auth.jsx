@@ -16,7 +16,7 @@ export const AuthProvider = ({children}) =>{
         if(recoveredUser){
             setUser(JSON.parse(recoveredUser))
         }
-
+        console.log(JSON.parse(recoveredUser))
         setLoading(false)
     },[])
 
@@ -39,7 +39,12 @@ export const AuthProvider = ({children}) =>{
             if (password === user.password && email === user.email) {
                 console.log('login', {email, password})
                 setUser({ id: user.id , email})
+
+                const loggedUser = response.data
+                console.log(response)
+                localStorage.setItem('user', JSON.stringify(loggedUser))   
                 Navigate('/myNotes')
+                
             }
           
         }); 

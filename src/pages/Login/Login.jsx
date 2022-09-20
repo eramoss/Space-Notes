@@ -2,9 +2,21 @@ import "./Login.css";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/auth";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  //
+  const Navigate = useNavigate()
+  useEffect(() => {
+    const recoveredUser = localStorage.getItem('user')
+
+    if(recoveredUser){
+      Navigate('/mynotes')
+    }
+  });
+  
+  
+
   const {Login} = useContext(AuthContext)
 
   // usando State para atualizar as variaveis do campo de input
