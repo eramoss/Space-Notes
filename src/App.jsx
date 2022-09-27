@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
-
 import Home from "./pages/home/Home";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Sign-up/Sign-up";
@@ -9,6 +8,7 @@ import Main from "./pages/main/main";
 import { AuthProvider, AuthContext } from "./contexts/auth";
 
 function App() {
+
   const Private = ({ children }) => {
     const { authenticated, loading } = useContext(AuthContext);
 

@@ -1,32 +1,23 @@
-import { useState } from "react";
 import "./styleComponents.css";
 
+
+
 function UserBar() {
-  const user = "eramoss";
-  const user_welcome = "space de " +  user ;
-
-
-  const [display,setDisplay] = useState({display:'none'})
-  const ShowUser = () => {
-        setDisplay({display:'flex'})
-  };
-
-  const CloseUser = () =>{
-    setDisplay({display:'none'})
-}
-
 
   return (
-    <div>
-      <header>
-        <img src="./planet.png" alt="logo of Space Notes" />
-        <button onClick={ShowUser} className="show-popUp-user">{user_welcome}</button>
-        <div onBlur={CloseUser} style={display} className="popUp-user">
-          <button value="logout">logout</button>
-          <button value="compartilhar feedback">compartilhar feedback</button>
-        </div>
+    <div className="body">
+      <div className="user-bar">
+        <header className="header-user-bar">
+          <img className="img-user-bar" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="user profile icon " />
+          
+          <div className="title-user-bar">
+            <h1 className="username">eramoss</h1>
+            <h2 className="user-subtitle">subtitle</h2>
+          </div>
+          
+        </header>
         
-      </header>
+      </div>
     </div>
   );
 }

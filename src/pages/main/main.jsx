@@ -14,8 +14,7 @@ function Main() {
 
    return <div>
     <UserBar></UserBar>
-
-   
+    <div><button onClick={handleLogout}>logout</button></div>
   </div>;
 }
 
