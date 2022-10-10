@@ -7,4 +7,4 @@
 <p> my first for real project using react.js.</p>
 <p> I deploying Space notes in vercel while i'm going developing.</p>
 
-
+###while i developing, I'm making posts about Project
