@@ -1,0 +1,28 @@
+.bodySectionList {
+  display: flex;
+  flex-direction: column;
+  font-family: "Source Sans Pro", normal;
+}
+
+.headerSectionList {
+  display: flex;
+  justify-content: space-between;
+  color: 242424;
+  font-weight: 500;
+  font-size: 1.2em;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  font-variant: small-caps;
+  opacity: 0.5;
+}
+
+.optionsSectionList{
+    width: 2vw;
+    display: flex;
+    gap: 8px;
+}
+
+.btnSectionList{
+    background-color: #FFFFFF;
+    font-size: 0.8em;
+}

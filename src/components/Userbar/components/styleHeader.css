@@ -1,0 +1,22 @@
+.containerBtn{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    font-family: 'Source Sans Pro', normal;
+    font-weight: 500;
+}
+
+.imgHeaderUser{
+    width: 4vw;
+    max-width: 53px;
+    min-width: 30px ;
+}
+
+.btnHeaderUser{
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f8f8;
+    width: 16vw;
+    padding: 0.6vw;
+    border-radius: 4px;
+}

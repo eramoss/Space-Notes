@@ -1,21 +1,22 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/auth";
-import UserBar from "../../components/UserBar";
-
-
+import UserBar from "../../components/Userbar/UserBar";
 
 function Main() {
-
-  const {logout} = useContext(AuthContext);
+  const { logout } = useContext(AuthContext);
 
   const handleLogout = () => {
-    logout()
-  }
+    logout();
+  };
 
-   return <div>
-    <UserBar></UserBar>
-    <div><button onClick={handleLogout}>logout</button></div>
-  </div>;
+  return (
+    <div>
+      <UserBar></UserBar>
+      <div>
+        <button onClick={handleLogout}>logout</button>
+      </div>
+    </div>
+  );
 }
 
 export default Main;
