@@ -10,5 +10,3 @@
 <p> I deploying Space notes in vercel while i'm going developing.</p>
 
 ## while i developing, I'm making posts about Project
-
-
